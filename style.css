@@ -1,0 +1,26 @@
+.form-popup {
+  display: none;
+  position: fixed;
+  right: 50%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container input[type=text] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
