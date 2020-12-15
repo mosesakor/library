@@ -16,7 +16,7 @@
   <section>
     <button type="button" id="addBook">Add a new book</button>
     <div class="form-popup" id="myForm">
-      <form class="form-container">
+      <form class="form-container" id="form">
         <h1>Add Book</h1>
     
         <label for="author"><b>Author</b></label>
@@ -31,20 +31,19 @@
         <input type="text" id="pages" placeholder="Pages" name="pages" required>
         <br>
 
-        <input type="checkbox" id="read" name="read-book">
-        <label for="read">Read</label><br>
-
-    
-        <button type="submit" id="addBtn" class="btn">Add Book</button>
+        <input type="checkbox" id="read" name="read-book" value="">
+        <label for="read">Read</label>
+        <br>
+        
+        <br>
+        <button type="button" id="addBtn" class="btn">Add Book</button>
         <button type="button" class="btn cancel", id="close">Close</button>
       </form>
     </div>
 
-    <div class="formValues">
-      <p id="test">
-          hmm
-      </p>
-    </div>
+    <ul id="booksContainer">
+
+    </ul>
   </section>
   <div>
     
