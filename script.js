@@ -43,17 +43,36 @@ function addBookToPage(book) {
     const list = document.querySelector('ul');
 
     const listItem = document.createElement('li');
-    const listText = document.createElement('span');
-    const listBtn = document.createElement('button');
+    const title = document.createElement('span');
+    const author = document.createElement('span');
+    const pages = document.createElement('span');
+    const read = document.createElement('span')
+    const readBtn = document.createElement('button');
+    const deleteBtn = document.createElement('button');
+    
 
-    listItem.appendChild(listText);
-    listText.textContent = book.info();
+    listItem.appendChild(title);
+    listItem.appendChild(author);
+    listItem.appendChild(pages);
+    listItem.appendChild(read);
+    listItem.appendChild(readBtn);
+    listItem.appendChild(deleteBtn);
+    title.textContent = `Title: ${book.title}`;
+    author.textContent = `Author: ${book.author}`;
+    pages.textContent = `Pages: ${book.pages}`;
+    read.textContent = `Read: ${book.read == true ? 'Yes' : 'Not read yet'}`;
+
+    readBtn.textContent = 'Read/Unread';
+    deleteBtn.textContent = 'Delete';
     listItem.dataset.id = bookIndex;
-    listItem.appendChild(listBtn);
-    listBtn.textContent = 'Delete';
     list.appendChild(listItem);
 
-    listBtn.onclick = function(e) {
+    readBtn.onclick = function(e) {
+      myLibrary[bookIndex].read == true ? myLibrary[bookIndex].read = "" : myLibrary[bookIndex].read = true
+      read.textContent = `Read: ${book.read == true ? 'Yes' : 'Not read yet'}`;
+    }
+
+    deleteBtn.onclick = function(e) {
       myLibrary.splice(bookIndex, 1)
       list.removeChild(listItem);
       displayBooks();
